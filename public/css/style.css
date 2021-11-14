@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+}
+
+p {
+    font-size: 20px;
+}
+
+.navbar {
+    height: 12vh;
+    background-color: white;
+}
+
+.landing {
+    height: calc(100vh - 12vh);
+    background-image: url('../assets/img/Home.png');
+    background-size: cover;
+}
+
+.landing_box h1 {
+    font-size: 60px;
+}
+
+.landing_arrow {
+    position: relative;
+    top: 20%;
+}
+
+.landing_arrow img {
+    width: fit-content;
+}
+
+.tagline {
+    height: 30vh;
+    background-image: url('../assets/img/Tagline.png');
+    background-size: cover;
+}
+
+.history {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.history:last-child {
+    line-height: 2;
+}
+
+.quote {
+    height: 40vh;
+    padding: 3rem 22rem 3rem 3rem;
+    background: linear-gradient(270deg, rgba(186, 186, 186, 0.2) -8.99%, rgba(186, 186, 186, 0) 114.78%);
+}
+
+.quote img {
+    height: calc(40vh + calc(3rem * 2));
+    position: absolute;
+    right: 20%;
+    transform: translateY(-30.5%);
+}
+
+.event .card-link::after {
+    content: " ->";
+}
+
+.gallery_image img {
+    height: 100%;
+    width: 100%;
+}
+
+.contact {
+    background: linear-gradient(90deg, rgba(186, 186, 186, 0.2) -1.47%, rgba(186, 186, 186, 0) 50%);
+}
+
+.contact .btn {
+    height: fit-content;
+}
+
+footer a {
+    color: black;
+}
+
+footer .col > img {
+    width: 100%;
+}
+
+footer .col > ul {
+    list-style: none;
+}
+
+footer .media_logo {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+}
+
+footer .media_logo > a {
+    color: white;
+}

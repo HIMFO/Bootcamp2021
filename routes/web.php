@@ -17,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function() {
+Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/posts', function() {
+Route::get('/posts', function () {
     return view('posts');
+});
+
+Route::get('/register', function () {
+    return view('register');
 });

@@ -1,3 +1,10 @@
+<?php
+
+$login = false;
+$user = 'Dary Ramadhan';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
         integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
         crossorigin="anonymous"></script>
-        {{-- Custom CSS --}}
+    {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
@@ -40,10 +47,23 @@
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <a href="#" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
-                    <a href="#" class="btn btn-outline-primary h-100 py-2 px-3">Login</a>
-                </div>
+                @if ($login == true)
+                    <div class="user_action d-flex align-items-center">
+                        <img src="{{ asset('assets/img/User.png') }}" alt="User Avatar" class="mx-2">
+                        <p class="mx-2 my-0">{{ $user }}</p>
+                        <div class="dropdown">
+                            <i class="fas fa-chevron-down mx-2 text-secondary" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"></i>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="user_action d-flex">
+                        <a href="#" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
+                        <a href="#" class="btn btn-outline-primary h-100 py-2 px-3">Login</a>
+                    </div>
+                @endif
             </div>
         </div>
     </nav>
@@ -51,7 +71,11 @@
     <main>
         <div class="landing d-flex flex-column align-items-center justify-content-center">
             <div class="landing_box d-flex flex-column align-items-center">
-                <h1 class="text-center my-4"><span>(HIMFO)</span><br>Himpunan Mahasiswa<br>Teknik Informatika</h1>
+                <h1 class="text-center my-4">
+                    <span class="text-secondary">(HIMFO)</span><br>
+                    Himpunan Mahasiswa<br>
+                    <span class="bg-secondary">Teknik Informatika</span>
+                </h1>
                 <p>Binus University @Malang</p>
             </div>
             <div class="landing_arrow d-flex flex-column align-items-center">

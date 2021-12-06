@@ -47,23 +47,10 @@ $user = 'Dary Ramadhan';
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
-                @if ($login == true)
-                    <div class="user_action d-flex align-items-center">
-                        <img src="{{ asset('assets/img/User.png') }}" alt="User Avatar" class="mx-2">
-                        <p class="mx-2 my-0">{{ $user }}</p>
-                        <div class="dropdown">
-                            <i class="fas fa-chevron-down mx-2 text-secondary" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"></i>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Logout</a>
-                            </div>
-                        </div>
-                    </div>
-                @else
-                    <div class="user_action d-flex">
-                        <a href="#" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
-                        <a href="#" class="btn btn-outline-primary h-100 py-2 px-3">Login</a>
-                    </div>
-                @endif
+                <div class="d-flex">
+                    <a href="/register" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
+                    <a href="#" class="btn btn-outline-primary h-100 py-2 px-3">Login</a>
+                </div>
             </div>
         </div>
     </nav>

@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Register Page</title>
+        {{-- favicon --}}
+        <link rel="icon" type="image/png" href="assets/img/Logo.png" />
+        <title>Bootcamp HIMFO - Register Page</title>
         {{-- Bootstrap --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
             integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -44,15 +46,15 @@
                             <div class="card-body p-0 px-5">
                                 <div class="mb-2">
                                     <label for="email" class="form-label fs-12">Email</label>
-                                    <input type="email" class="form-control br-1 fs-12" id="email" placeholder="name@example.com">
+                                    <input type="email" autocomplete="off"  class="form-control br-1 fs-12" id="email" placeholder="name@example.com">
                                 </div>
                                 <div class="mb-2">
                                     <label for="password" class="form-label fs-12">Password</label>
-                                    <input type="password" minlength="8" class="form-control br-1 fs-12" id="password" placeholder="password min. 8 char">
+                                    <input type="password" autocomplete="off"  minlength="8" class="form-control br-1 fs-12" id="password" placeholder="password min. 8 char">
                                 </div>
                                 <div class="mb-2">
                                     <label for="confirm-password" class="form-label fs-12">Confirm Password</label>
-                                    <input type="password" minlength="8" class="form-control mb-3 br-1 fs-12" id="confirm-password" placeholder="Confirm password min. 8 char">
+                                    <input type="password"  autocomplete="off" minlength="8" class="form-control mb-3 br-1 fs-12" id="confirm-password" placeholder="Confirm password min. 8 char">
                                 </div>
                                 <div class="mb-2">
                                     <button type="button" class="btn btn-dark w-100 br-1">

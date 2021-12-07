@@ -34,33 +34,33 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <h1 style="font-weight: 700 !important">Welcome!</h1>
+                        <h2 style="font-weight: 700 !important">Welcome!</h2>
                     </div>
                     {{-- end header --}}
                     {{-- form register --}}
-                    <div class="row justify-content-center mb-4">
+                    <div class="row justify-content-center mb-3">
                         <div class="card br-2 box-shadow-on">
-                            <p class="mt-3 fs-15 text-center">Let's create an account first, okay ?</p>
-                            <div class="card-body px-5">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control br-1" id="email" placeholder="name@example.com">
+                            <p class="mt-3 fs-12 text-center">Let's create an account first, okay ?</p>
+                            <div class="card-body p-0 px-5">
+                                <div class="mb-2">
+                                    <label for="email" class="form-label fs-12">Email</label>
+                                    <input type="email" class="form-control br-1 fs-12" id="email" placeholder="name@example.com">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" minlength="8" class="form-control br-1" id="password" placeholder="password min. 8 char">
+                                <div class="mb-2">
+                                    <label for="password" class="form-label fs-12">Password</label>
+                                    <input type="password" minlength="8" class="form-control br-1 fs-12" id="password" placeholder="password min. 8 char">
                                 </div>
-                                <div class="mb-3s">
-                                    <label for="confirm-password" class="form-label">Confirm Password</label>
-                                    <input type="password" minlength="8" class="form-control mb-4 br-1" id="confirm-password" placeholder="Confirm password min. 8 char">
+                                <div class="mb-2">
+                                    <label for="confirm-password" class="form-label fs-12">Confirm Password</label>
+                                    <input type="password" minlength="8" class="form-control mb-3 br-1 fs-12" id="confirm-password" placeholder="Confirm password min. 8 char">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-2">
                                     <button type="button" class="btn btn-dark w-100 br-1">
                                         Register
                                     </button>
                                 </div>
                                 <div class="mb-3 text-center">
-                                    <a href="#" class="fc-dark">Forget your password</a>
+                                    <a href="#" class="fc-dark fs-12">Forget your password</a>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                     {{-- end form regiter --}}
                     {{-- footer --}}
                     <div class="row justify-content-center">
-                        <p class="text-center mb-3 fs-15">
+                        <p class="text-center mb-2 fs-12">
                             Already have an account ?
                             <a href="/" class="fc-dark"><b>Login</b></a>
                         </p>

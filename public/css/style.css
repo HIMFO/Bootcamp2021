@@ -148,6 +148,10 @@ footer .media_logo > a {
     font-size: 15px;
 }
 
+.fs-12 {
+    font-size: 12px;
+}
+
 .fc-dark {
     color: rgb(42, 42, 42);
 }

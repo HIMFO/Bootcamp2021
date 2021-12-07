@@ -60,7 +60,7 @@ $user = 'Dary Ramadhan';
                     </div>
                 @else
                     <div class="user_action d-flex">
-                        <a href="#" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
+                        <a href="/register" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>
                         <a href="#" class="btn btn-outline-primary h-100 py-2 px-3">Login</a>
                     </div>
                 @endif

@@ -12,7 +12,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"
             integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg=="
             crossorigin="anonymous"></script>
-            {{-- Custom CSS --}}
+        {{-- Custom CSS --}}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
@@ -70,7 +70,7 @@
                     <div class="row justify-content-center">
                         <p class="text-center mb-2 fs-12">
                             Already have an account ?
-                            <a href="/" class="fc-dark"><b>Login</b></a>
+                            <a href="/dashboard" class="fc-dark"><b>Login</b></a>
                         </p>
                     </div>
                     {{-- end footer --}}

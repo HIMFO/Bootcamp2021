@@ -14,7 +14,7 @@
         crossorigin="anonymous"></script>
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+
 </head>
 <body>
 
@@ -37,7 +37,7 @@
                 </form>
                 <a href="#" class="my-3">Forget your password?</a>
             </div>
-            <p class="my-3">Dont have a account? <a href="#">Register</a></p>
+            <p class="my-3">Dont have a account? <a href="/register">Register</a></p>
         </div>
     </div>
 

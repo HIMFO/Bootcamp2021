@@ -21,10 +21,18 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/posts', function () {
     return view('posts');
 });
 
 Route::get('/register', function () {
     return view('register');
+});
+
+Route::get('/contactus', function () {
+    return view('contactus');
 });

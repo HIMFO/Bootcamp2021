@@ -173,6 +173,43 @@ footer .media_logo > a {
     color: white;
 }
 
-.contact_page form input, textarea {
-    border: 2px solid rgb(182, 182, 182);
+.login_card {
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
 }
+
+/* REGISTER */
+.br-1 {
+    border-radius: 10px;
+}
+.br-2 {
+    border-radius: 20px;
+}
+.br-3 {
+    border-radius: 30px;
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fc-dark {
+    color: rgb(42, 42, 42);
+}
+
+.background-login {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100);
+    opacity: 0.1;
+}
+
+.box-shadow-on {
+    box-shadow: 0 1px 50px 4px rgba(0, 0, 0, 0.097);
+    border: none;
+}
+/* END REGISTER */

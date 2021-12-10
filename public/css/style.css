@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
+:root {
+}
+
 body {
     font-family: "Inter", sans-serif;
 }
@@ -20,15 +23,6 @@ p {
 .navbar {
     height: 12vh;
     background-color: white;
-}
-
-.navbar .user_action img {
-    height: 3rem;
-}
-
-.navbar .user_action .dropdown svg {
-    cursor: pointer;
-    font-size: 1.25rem;
 }
 
 .landing {
@@ -155,61 +149,3 @@ footer .media_logo > a {
     box-shadow: 0 1px 50px 4px rgba(0, 0, 0, 0.097);
     border: none;
 }
-
-.contact_page {
-    height: 70vh;
-    background: linear-gradient(
-        270deg,
-        rgba(186, 186, 186, 0.2) -8.99%,
-        rgba(186, 186, 186, 0) 114.78%
-    );
-}
-
-.contact_page .media_brand {
-    height: 3rem;
-    width: 3rem;
-    font-size: 2rem;
-    background-color: black;
-    color: white;
-}
-
-.login_card {
-    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* REGISTER */
-.br-1 {
-    border-radius: 10px;
-}
-.br-2 {
-    border-radius: 20px;
-}
-.br-3 {
-    border-radius: 30px;
-}
-
-.fs-15 {
-    font-size: 15px;
-}
-
-.fs-12 {
-    font-size: 12px;
-}
-
-.fc-dark {
-    color: rgb(42, 42, 42);
-}
-
-.background-login {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    filter: grayscale(100);
-    opacity: 0.1;
-}
-
-.box-shadow-on {
-    box-shadow: 0 1px 50px 4px rgba(0, 0, 0, 0.097);
-    border: none;
-}
-/* END REGISTER */

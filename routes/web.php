@@ -28,3 +28,11 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
+
+Route::get('/aboutus', function () {
+    return view('admin.aboutus');
+});
+
+Route::get('/galleries', function () {
+    return view('admin.galleries');
+});

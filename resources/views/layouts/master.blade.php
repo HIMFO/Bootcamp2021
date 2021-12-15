@@ -14,6 +14,9 @@
     {{-- Font Awesome --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
 
+    {{-- QuillJS CSS --}}
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     {{-- Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
@@ -37,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="ps-4">
+                    <a href="@yield('nav-event')" class="ps-4">
                         <i class="fas fa-calendar-week me-2"></i>
                         Event
                     </a>
@@ -96,10 +99,17 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"> </script>
 
+    {{-- QuillJS --}}
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
     <script type="text/javascript">
         $('#sidebarCollapse').on('click',function(){
             $("#sidebar, #content").toggleClass("active");
         })
+
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
     </script>
 </body>
 </html>

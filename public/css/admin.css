@@ -149,3 +149,12 @@ body {
     border-radius: 10px;
     z-index: 999;
 } */
+
+form > div:nth-child(2) > div > div:last-child {
+    transition: background-color 200ms ease-in-out;
+}
+
+form > div:nth-child(2) > div > div:last-child:hover {
+    cursor: pointer;
+    background-color: #e0e0e0!important;
+}

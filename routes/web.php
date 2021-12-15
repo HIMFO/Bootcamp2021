@@ -36,3 +36,11 @@ Route::get('/aboutus', function () {
 Route::get('/galleries', function () {
     return view('admin.galleries');
 });
+
+Route::get('/event', function () {
+    return view('admin.event');
+});
+
+Route::get('/event/add', function () {
+    return view('admin.addevent');
+});

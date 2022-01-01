@@ -1,12 +1,13 @@
 @extends('layouts.master')
 
 @section('nav-galleries')
-    active
+active
 @endsection
 
 @section('content')
 
-    <div class="container p-4">
+<div class="container p-4 d-flex justify-content-between align-items-center">
+    <div>
         <h2 class="fw-bold">Galleries</h2>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -15,125 +16,46 @@
             </ol>
         </nav>
     </div>
-    <form class="container p-4">
-        <div class="my-3 d-flex flex-column">
-            <label for="caption" class="my-3"><b>Input galleries caption:</b></label>
-            <input type="text" name="caption" id="caption" class="my-3 p-3">
+    <a href="http://localhost:8000/event/add" class="btn btn-secondary px-3 py-2">+ Add Photo</a>
+</div>
+<div class="container p-4">
+    {{-- Tabel --}}
+    <div class="row bg-white rounded">
+        {{-- Header --}}
+        <div class="p-3 col-12 bg-secondary text-white rounded-top">
+            <div class="row text-center">
+                <div class="col-1">No</div>
+                <div class="col-3">Photo Title</div>
+                <div class="col-4">Image</div>
+                <div class="col-2">Last Update</div>
+                <div class="col-2">Action</div>
+            </div>
         </div>
-        <div class="my-3 d-flex flex-column">
-            <p class="my-3"><b>Input Image file:</b></p>
-            {{-- Tabel --}}
-            <form class="row bg-white">
-                {{-- Table Header --}}
-                <div class="col-12 bg-secondary rounded-top">
-                    <div class="row text-white">
-                        <div class="col-1 p-0">
-                            <div class="p-3">
-                                <p><b>No</b></p>
-                            </div>
-                        </div>
-                        <div class="col-5 p-0">
-                            <div class="p-3">
-                                <p><b>File Name</b></p>
-                            </div>
-                        </div>
-                        <div class="col-3 p-0">
-                            <div class="p-3">
-                                <p><b>Image</b></p>
-                            </div>
-                        </div>
-                        <div class="col-3 p-0">
-                            <div class="p-3">
-                                <p><b>Action</b></p>
-                            </div>
-                        </div>
-                    </div>      
+        {{-- Data --}}
+        <div class="p-3 col-12 rounded-bottom">
+            <div class="row ">
+                {{-- No --}}
+                <div class="col-1 text-center">1</div>
+                {{-- Event Name --}}
+                <div class="col-3">Welcoming Party HIMFO 2021</div>
+                {{-- Image --}}
+                <div class="col-4">
+                    <img src="" alt="image">
                 </div>
-                {{-- Input Image --}}
-                <div class="col-12 input_image">
-                    <div class="row">
-                        <div class="col-12 row">
-                            <div class="col-1 p-0">
-                                <div class="p-3">
-                                    <p>1</p>
-                                </div>
-                            </div>
-                            <div class="col-5 p-0">
-                                <div class="p-3">
-                                    <input type="text" name="judul" id="judul">
-                                </div>
-                            </div>
-                            <div class="col-3 p-0">
-                                <div class="p-3">
-                                    <input type="file" name="foto" id="foto" onchange="loadFile(event)">
-                                    <img src="" alt="Uploaded Image" id="uploadImage">
-                                </div>
-                            </div>
-                            <div class="col-3 p-0">
-                                <div class="p-3">
-                                    <button type="button" class="btn btn-primary">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- New Element here! --}}
-                    
-                </div>
-                {{-- Button Add Image --}}
-                <div class="col-12 p-3 d-flex justify-content-center align-items-center bg-secondary rounded-bottom text-white">
-                    <p>+ Add Image</p>
+                {{-- Last Update --}}
+                <div class="col-2 text-center">11 Agustus 2021</div>
+                {{-- Action --}}
+                <div class="col-2 d-flex justify-content-around align-items-center">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-end align-items-center">
-            <button class="btn btn-primary p-3" type="submit">Submit</button>
-        </div>
-    </form>
-    <script>
-        let num = 1
-        document.querySelector('form > div > div.d-flex').addEventListener('click', e => {
-            num++
-            document.querySelector('form .input_image > div').innerHTML += 
-            `
-            <div class="col-12 row">
-                <div class="col-1 p-0">
-                    <div class="p-3">
-                        <p>${num}</p>
-                    </div>
-                </div>
-                <div class="col-5 p-0">
-                    <div class="p-3">
-                        <input type="text" name="judul" id="judul">
-                    </div>
-                </div>
-                <div class="col-3 p-0">
-                    <div class="p-3">
-                        <input type="file" name="foto" id="foto" onchange="loadFile(event)">
-                        <img src="" alt="Uploaded Image" id="uploadImage">
-                    </div>
-                </div>
-                <div class="col-3 p-0">
-                    <div class="p-3">
-                        <button type="button" class="btn btn-primary">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            `
-        })
-        function loadFile(event) {
-            let output = document.querySelector('#uploadImage')
-            output.src = URL.createObjectURL(event.target.files[0])
-        }
-    </script>
+    </div>
+</div>
 
 @endsection

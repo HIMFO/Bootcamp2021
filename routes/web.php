@@ -41,6 +41,26 @@ Route::get('/event', function () {
     return view('admin.event');
 });
 
-Route::get('/event/add', function () {
-    return view('admin.addevent');
+Route::get('/blog', function () {
+    return view('admin.blog');
+});
+
+Route::get('/upload/addevent', function () {
+    return view('admin.upload.addevent');
+});
+
+Route::get('/upload/addgalleries', function () {
+    return view('admin.upload.addgalleries');
+});
+
+Route::get('/upload/updateblog', function () {
+    return view('admin.upload.updateblog');
+});
+
+Route::get('/upload/updateevent', function () {
+    return view('admin.upload.updateevent');
+});
+
+Route::get('/upload/updategalleries', function () {
+    return view('admin.upload.updategalleries');
 });

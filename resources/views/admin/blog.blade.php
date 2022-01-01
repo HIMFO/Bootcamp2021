@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('nav-event')
+@section('nav-blog')
 active
 @endsection
 
@@ -8,15 +8,15 @@ active
 
 <div class="container p-4 d-flex justify-content-between align-items-center">
     <div>
-        <h2 class="fw-bold">Event</h2>
+        <h2 class="fw-bold">Blog</h2>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Event</li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
             </ol>
         </nav>
     </div>
-    <a href="http://localhost:8000/event/add" class="btn btn-secondary px-3 py-2">+ Add New</a>
+    <a href="http://localhost:8000/blog/add" class="btn btn-secondary px-3 py-2">+ Add New</a>
 </div>
 <div class="container p-4">
     {{-- Tabel --}}
@@ -25,10 +25,9 @@ active
         <div class="p-3 col-12 bg-secondary text-white rounded-top">
             <div class="row text-center">
                 <div class="col-1">No</div>
-                <div class="col-2">Event Name</div>
-                <div class="col-2">Description</div>
-                <div class="col-3">Image</div>
-                <div class="col-2">Tanggal Pelaksanaan</div>
+                <div class="col-2">Blog Title</div>
+                <div class="col-4">Description</div>
+                <div class="col-2">Last Update</div>
                 <div class="col-2">Action</div>
             </div>
         </div>
@@ -37,16 +36,12 @@ active
             <div class="row ">
                 {{-- No --}}
                 <div class="col-1 text-center">1</div>
-                {{-- Event Name --}}
-                <div class="col-2">Welcoming Party HIMFO 2021</div>
+                {{-- Blog Title --}}
+                <div class="col-2">HISTORY OF HIMFO</div>
                 {{-- Description --}}
-                <div class="col-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur nesciunt impedit aliquid numquam? Quis laborum consequuntur praesentium eius fugit!</div>
-                {{-- Image --}}
-                <div class="col-3">
-                    <img src="" alt="image">
-                </div>
-                {{-- Tanggal Pelaksanaan --}}
-                <div class="col-2 text-center">15 Agustus 2021</div>
+                <div class="col-4">Himpunan Mahasiswa Teknik Informatika Universitas Bina Nusantara atau yang sering kita sebut HIMFO berdiri pertama kali pada tahun 1992, tepatnya pada 14 September 1992. Pencetus ide HIMTI merupakan mantan ketua Jurusan Teknik Informatika yaitu Bpk. Ir. Toto Widyanto, MSc. Pada saat itu, HIMTI dipimpin oleh koordinator umum bernama Sdr. Yusuf Setiyono HIMTI sendiri merupakan organisasi kemahasiswaan yang memiliki bentuk sebagai himpunan antar jurusan School of Computer Science (SOCS).</div>
+                {{-- Last Update --}}
+                <div class="col-2 text-center">11 Agustus 2021</div>
                 {{-- Action --}}
                 <div class="col-2 d-flex justify-content-around align-items-center">
                     <button type="button" class="btn btn-primary">

@@ -8,12 +8,12 @@ active
 
 <div class="container p-4">
     <div>
-        <h2 class="fw-bold">Add Event</h2>
+        <h2 class="fw-bold">Update Event</h2>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home</a></li>
                 <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Event</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Add Event</li>
+                <li class="breadcrumb-item active" aria-current="page">Update Event</li>
             </ol>
         </nav>
     </div>

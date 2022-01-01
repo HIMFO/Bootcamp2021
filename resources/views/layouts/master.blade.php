@@ -39,14 +39,14 @@
                         About Us
                     </a>
                 </li>
-                <li>
-                    <a href="@yield('nav-event')" class="ps-4">
+                <li class="@yield('nav-event')">
+                    <a href="/event" class="ps-4">
                         <i class="fas fa-calendar-week me-2"></i>
                         Event
                     </a>
                 </li>
-                <li>
-                    <a href="" class="ps-4">
+                <li class="@yield('nav-blog')">
+                    <a href="/blog" class="ps-4">
                         <i class="fas fa-newspaper me-2"></i>
                         Blog
                     </a>
@@ -109,6 +109,45 @@
 
         var quill = new Quill('#editor', {
             theme: 'snow'
+        });
+    </script>
+
+    <script type="text/javascript">
+        var i = 0;
+        function preview_member(event, inp) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById("output_member" + inp);
+                output.src = reader.result;
+            };
+        reader.readAsDataURL(event.target.files[0]);
+        }
+
+        jQuery(document).ready(function($) {
+            //fadeout selected item and remove
+            $(document).on("click", "#remove-member-fields", function(event) {
+                event.preventDefault();
+                $(this)
+                .parent(300, function() {
+                    $(this).empty();
+                    return false;
+                });
+            });
+            $('tbody').on('click', '.remove', function(){
+                $(this).parent().parent().remove();
+            });
+            //add input
+            $("#add-member-fields").click(function() {
+                i++;
+                var rows = '<tr>' +
+                                '<td class="col-3"><input type="file" name="images[]" id="image" onchange="preview_member(event, '+ i + ')"></td>' +
+                                '<td class="col-5"><img id="output_member'+ i + '" style="max-width:40%;margin: 10px"></td>' +
+                                '<td class="col-2 text-center"><button class="btn btn-danger remove" id="remove-member-fields">- Remove</button></td>' +
+                                '</tr>';
+                $(rows)
+                .appendTo("#team-member-fields");
+                return false;
+            });
         });
     </script>
 </body>

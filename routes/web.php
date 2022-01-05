@@ -13,17 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'WebController@homepage');
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
+//Route::get('/login', function () {
+//    return view('login');
+//});
+//
+//Route::get('/register', function () {
+//    return view('register');
+//});
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
@@ -64,3 +62,6 @@ Route::get('/upload/updateevent', function () {
 Route::get('/upload/updategalleries', function () {
     return view('admin.upload.updategalleries');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

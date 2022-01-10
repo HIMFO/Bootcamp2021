@@ -42,28 +42,45 @@
                     {{-- form register --}}
                     <div class="row justify-content-center mb-3">
                         <div class="card br-2 box-shadow-on">
+                            @if($errors->any())
+                                <div class="alert alert-danger" role="alert">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <p class="mt-3 fs-12 text-center">Let's create an account first, okay ?</p>
                             <div class="card-body p-0 px-5">
-                                <div class="mb-2">
-                                    <label for="email" class="form-label fs-12">Email</label>
-                                    <input type="email" autocomplete="off"  class="form-control br-1 fs-12" id="email" placeholder="name@example.com">
-                                </div>
-                                <div class="mb-2">
-                                    <label for="password" class="form-label fs-12">Password</label>
-                                    <input type="password" autocomplete="off"  minlength="8" class="form-control br-1 fs-12" id="password" placeholder="password min. 8 char">
-                                </div>
-                                <div class="mb-2">
-                                    <label for="confirm-password" class="form-label fs-12">Confirm Password</label>
-                                    <input type="password"  autocomplete="off" minlength="8" class="form-control mb-3 br-1 fs-12" id="confirm-password" placeholder="Confirm password min. 8 char">
-                                </div>
-                                <div class="mb-2">
-                                    <button type="button" class="btn btn-dark w-100 br-1">
-                                        Register
-                                    </button>
-                                </div>
-                                <div class="mb-3 text-center">
-                                    <a href="#" class="fc-dark fs-12">Forget your password</a>
-                                </div>
+                                <form method="post" action="">
+                                    @csrf
+                                    <div class="mb-2">
+                                        <label for="name" class="form-label fs-12">Name</label>
+                                        <input type="text" autocomplete="off"  class="form-control br-1 fs-12" id="name" placeholder="John Doe" name="name" value="{{ old('name') }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="email" class="form-label fs-12">Email</label>
+                                        <input type="email" autocomplete="off"  class="form-control br-1 fs-12" id="email" placeholder="name@example.com" name="email" value="{{ old('email') }}">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="password" class="form-label fs-12">Password</label>
+                                        <input type="password" autocomplete="off" class="form-control br-1 fs-12" id="password" placeholder="password min. 8 char" name="password">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="confirm-password" class="form-label fs-12">Confirm Password</label>
+                                        <input type="password"  autocomplete="off" class="form-control mb-3 br-1 fs-12" id="confirm-password" placeholder="Confirm password min. 8 char" name="password_confirmation">
+                                    </div>
+                                    <div class="mb-2">
+                                        <button type="submit" class="btn btn-dark w-100 br-1">
+                                            Register
+                                        </button>
+                                    </div>
+                                    <div class="mb-3 text-center">
+                                        <a href="#" class="fc-dark fs-12">Forget your password</a>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

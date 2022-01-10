@@ -24,10 +24,22 @@
             <div class="login_card my-3 p-5 d-flex flex-column align-items-center">
                 <h1>Welcome back!</h1>
                 <p>Let’s create spectacular event again.</p>
-                <form action="" class="my-3 d-flex flex-column align-items-center">
+
+                @if($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form method="post" action="" class="my-3 d-flex flex-column align-items-center">
+                    @csrf
                     <div class="d-flex flex-column my-3">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Your Email" class="p-2">
+                        <input type="email" name="email" id="email" placeholder="Your Email" class="p-2" value="{{ old('email') }}">
                     </div>
                     <div class="d-flex flex-column my-3">
                         <label for="password">Password</label>

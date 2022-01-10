@@ -1,10 +1,3 @@
-<?php
-
-$login = false;
-$user = 'Dary Ramadhan';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,17 +43,24 @@ $user = 'Dary Ramadhan';
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
-                @if ($login == true)
+                @if (auth()->guard('web')->check())
                     <div class="user_action d-flex align-items-center">
                         <img src="{{ asset('assets/img/User.png') }}" alt="User Avatar" class="mx-2">
-                        <p class="mx-2 my-0">{{ $user }}</p>
+                        <p class="mx-2 my-0">{{ auth()->guard('web')->user()->name }}</p>
                         <div class="dropdown">
                             <i class="fas fa-chevron-down mx-2 text-secondary" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"></i>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Logout</a>
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
                             </div>
                         </div>
                     </div>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 @else
                     <div class="user_action d-flex">
                         <a href="/register" style="text-decoration: none" class="h-100 mx-lg-3 p-lg-2 py-2 text-center">Register</a>

@@ -57,6 +57,17 @@
                         Galleries
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.logout') }}" class="ps-4" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
             </ul>
         </div>
         <div id="content">

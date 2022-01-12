@@ -23,10 +23,6 @@ Route::get('/', 'WebController@homepage');
 //    return view('register');
 //});
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-
 Route::get('/aboutus', function () {
     return view('admin.aboutus');
 });
@@ -65,3 +61,11 @@ Route::get('/upload/updategalleries', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+    Route::get('login', 'AuthController@showLoginForm')->name('login');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout')->name('logout');
+    
+    Route::get('home', 'HomeController@home')->name('home');
+});

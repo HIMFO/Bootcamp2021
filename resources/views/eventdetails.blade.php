@@ -72,98 +72,22 @@
     </nav>
 
     <main>
-        <div class="landing d-flex flex-column align-items-center justify-content-center">
-            <div class="landing_box d-flex flex-column align-items-center">
-                <h1 class="text-center my-4">
-                    <span class="text-secondary">(HIMFO)</span><br>
-                    Himpunan Mahasiswa<br>
-                    <span class="bg-secondary">Teknik Informatika</span>
-                </h1>
-                <p>Binus University @Malang</p>
-            </div>
-            <div class="landing_arrow d-flex flex-column align-items-center">
-                <p>scroll down</p>
-                <img src="{{ asset('assets/svg/Arrow.svg') }}" alt="Arrow">
+        <div class="container p-4 d-flex justify-content-between align-items-center">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Event Details</li>
+                    </ol>
+                </nav>
+                <h1 class="fw-bold">{{ $event->nama }}</h1>
             </div>
         </div>
-        <div class="tagline">
-            <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-                <p>Our Tagline</p>
-                <h1>One Family One Goal</h1>
-            </div>
+        <div class="container">
+            <img src="{{ asset($event->image) }}" class="card-img-top" alt="{{ $event->nama }}">
         </div>
-        <div class="history container">
-            <p class="mb-0">1 // Our History</p>
-            <h2 class="mb-4">History of HIMFO</h2>
-            <p class="text-justify">Himpunan Mahasiswa Teknik Informatika Universitas Bina Nusantara atau yang sering
-                kita sebut HIMFO berdiri pertama kali pada tahun 1992, tepatnya pada 14 September 1992. Pencetus ide
-                HIMTI merupakan mantan ketua Jurusan Teknik Informatika yaitu Bpk. Ir. Toto Widyanto, MSc. Pada saat
-                itu, HIMTI dipimpin oleh koordinator umum bernama Sdr. Yusuf Setiyono HIMTI sendiri merupakan organisasi
-                kemahasiswaan yang memiliki bentuk sebagai himpunan antar jurusan School of Computer Science (SOCS).</p>
-        </div>
-        <div class="quote container d-flex">
-            <div class="mx-5 d-flex flex-column justify-content-between">
-                <h2>HIMFO bagi saya adalah rumah tempat kita bertukar pikiran, bersatu dan bersinergi bersama.</h2>
-                <div class="align-self-end">
-                    <h3>Stephano Christian</h3>
-                    <p>Chief Executive Officer</p>
-                </div>
-            </div>
-            <img src="{{ asset('assets/img/Figure.png') }}" alt="Stephano Christian">
-        </div>
-        <div class="event container p-5">
-            <p class="mb-0">2 // Our Activities</p>
-            <h1 class="mb-5">Upcoming Event</h1>
-            <div class="row">
-                
-                @foreach ($events as $event)
-                <div class="col-4">
-                    <div class="card">
-                        <img src="{{ asset($event->image) }}" class="card-img-top" alt="{{ $event->nama }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $event->nama }}</h5>
-                            <p class="card-text">{{ $event->date->format('d-m-Y') }}</p>
-                            <a href="{{ route('eventdetail', $event->id) }}" class="card-link">Lihat detail</a>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-
-            </div>
-            <div class="row">
-                <a href="{{ route('eventlist') }}" class="btn btn-link">More Events</a>
-            </div>
-        </div>
-        <div class="galleries container p-5">
-            <p class="mb-0">3 // Our Galleries</p>
-            <h1 class="mb-5">Galleries of HIMTI</h1>
-            <div class="row">
-                <div class="gallery_image col-6 my-3">
-                    <img src="{{ asset('assets/img/Gallery-1.png') }}" alt="Gallery Image">
-                </div>
-                <div class="gallery_image col-6 my-3">
-                    <img src="{{ asset('assets/img/Gallery-2.png') }}" alt="Gallery Image">
-                </div>
-                <div class="gallery_image col-6 my-3">
-                    <img src="{{ asset('assets/img/Gallery-3.png') }}" alt="Gallery Image">
-                </div>
-                <div class="gallery_image col-6 my-3">
-                    <img src="{{ asset('assets/img/Gallery-4.png') }}" alt="Gallery Image">
-                </div>
-            </div>
-        </div>
-        <div class="contact p-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1>Let us know if you have a questions.</h1>
-                        <p>Your question will be answered max 1x24 hours, thanks for contact us!</p>
-                    </div>
-                    <div class="col d-flex justify-content-end align-items-center">
-                        <a href="#" class="btn btn-dark p-3">Contact Us</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container pl-4 mt-4">
+            {!! $event->deskripsi !!}
         </div>
     </main>
 

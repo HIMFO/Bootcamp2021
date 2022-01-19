@@ -16,7 +16,7 @@ active
             </ol>
         </nav>
     </div>
-    <a href="http://localhost:8000/event/add" class="btn btn-secondary px-3 py-2">+ Add Photo</a>
+    <a href="{{ route('admin.addgalleries') }}" class="btn btn-secondary px-3 py-2">+ Add Photo</a>
 </div>
 <div class="container p-4">
     {{-- Tabel --}}
@@ -33,12 +33,11 @@ active
         </div>
         {{-- Data --}}
         <div class="p-3 col-12 rounded-bottom">
-            @foreach($galeri as $g)
             <div class="row ">
                 {{-- No --}}
                 <div class="col-1 text-center">1</div>
                 {{-- Event Name --}}
-                <div class="col-3">{{$g->nama}}</div>
+                <div class="col-3">Welcoming Party HIMFO 2021</div>
                 {{-- Image --}}
                 <div class="col-4">
                     <img src="" alt="image">
@@ -50,15 +49,11 @@ active
                     <button type="button" class="btn btn-primary">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
                     <button type="button" class="btn btn-danger">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
             </div>
-            @endforeach
         </div>
     </div>
 </div>

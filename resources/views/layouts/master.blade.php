@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="@yield('nav-event')">
-                    <a href="/event" class="ps-4">
+                    <a href="{{ route('admin.event') }}" class="ps-4">
                         <i class="fas fa-calendar-week me-2"></i>
                         Event
                     </a>

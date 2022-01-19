@@ -16,7 +16,7 @@ active
             </ol>
         </nav>
     </div>
-    <a href="http://localhost:8000/blog/add" class="btn btn-secondary px-3 py-2">+ Add New</a>
+    <a href="{{ route('admin.updateblog') }}" class="btn btn-secondary px-3 py-2">+ Add New</a>
 </div>
 <div class="container p-4">
     {{-- Tabel --}}

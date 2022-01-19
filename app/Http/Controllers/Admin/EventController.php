@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -20,19 +22,22 @@ class EventController extends Controller
         $namabaru = null;
        }
 
-       $event = Event::insert([
+       $event = Event::create([
            'nama' => $request->judul,
            'deskripsi'=> $request->deskripsi,
            'image' => $namaBaru,
            'date'=> $request->tanggalPelaksanaan, 
        ]);
 
-       return view('admin.event');
+       return redirect()->route('admin.event');
     }
 
     public function index(){
-        $event = Event::all();
-        return view('admin.event', ['event1' => $event]);
+        $events = Event::all(); // select * from events
+        
+        return view('admin.event', compact(
+            'events'
+        ));
     }
    
 }

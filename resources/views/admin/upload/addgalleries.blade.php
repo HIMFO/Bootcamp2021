@@ -19,8 +19,7 @@ active
     </div>
 </div>
 <div class="container p-4">
-    <form class="p-4 bg-white" enctype="multipart/form-data" id="form" method="post" action="{{route('upload.galeri')}}">
-        @csrf
+    <form class="p-4 bg-white" enctype="multipart/form-data" id="form">
         <div class="my-3 d-flex flex-column">
             <label for="judul" class="my-3">Judul Gambar</label>
             <input type="text" name="judul" id="judul" placeholder="Judul Gambar" class="my-3 p-3" required>

@@ -18,4 +18,8 @@ class Event extends Model
         'created_at',
         'updated_at',
     ];
+    
+    protected $dates = [
+        'date'
+    ];
 }

@@ -16,7 +16,7 @@ active
             </ol>
         </nav>
     </div>
-    <a href="http://localhost:8000/event/add" class="btn btn-secondary px-3 py-2">+ Add New</a>
+    <a href="{{ route('admin.addevent') }}" class="btn btn-secondary px-3 py-2">+ Add New</a>
 </div>
 <div class="container p-4">
     {{-- Tabel --}}
@@ -34,20 +34,21 @@ active
         </div>
         {{-- Data --}}
         <div class="p-3 col-12 rounded-bottom">
-            @foreach ($event1 as $e)
+            
+            @foreach ($events as $index => $event)
             <div class="row ">
                 {{-- No --}}
-                <div class="col-1 text-center">1</div>
+                <div class="col-1 text-center">{{ $index + 1 }}</div>
                 {{-- Event Name --}}
-                <div class="col-2">{{$e->nama}}</div>
+                <div class="col-2">{{ $event->nama }}</div>
                 {{-- Description --}}
-                <div class="col-2">{{$e->deskripsi}}</div>
+                <div class="col-2">{{ Str::limit($event->deskripsi, 100) }}</div>
                 {{-- Image --}}
                 <div class="col-3">
-                    <img src="{{$e->image}}" alt="image" style="height: 150px;width: 180px;">
+                    <img src="{{ asset($event->image) }}" alt="image" width="100">
                 </div>
                 {{-- Tanggal Pelaksanaan --}}
-                <div class="col-2 text-center">{{$e->date}}</div>
+                <div class="col-2 text-center">{{ $event->date }}</div>
                 {{-- Action --}}
                 <div class="col-2 d-flex justify-content-around align-items-center">
                     <button type="button" class="btn btn-primary">
@@ -57,8 +58,9 @@ active
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
-            </div>
+            </div>    
             @endforeach
+            
         </div>
     </div>
 </div>

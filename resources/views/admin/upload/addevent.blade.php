@@ -19,7 +19,7 @@ active
     </div>
 </div>
 <div class="container p-4">
-    <form method="POST" class="p-4 bg-white" enctype="multipart/form-data" action="{{route('uploadEvent')}}">
+    <form action="{{ route('admin.uploadEvent') }}" method="post" class="p-4 bg-white" enctype="multipart/form-data">
         @csrf
         <div class="my-3 d-flex flex-column">
             <label for="judul" class="my-3">Event name</label>
@@ -27,8 +27,7 @@ active
         </div>
         <div class="my-3 d-flex flex-column">
             <label for="desc" class="my-3">Deskripsi event</label>
-            {{-- <div id="editor"></div> --}}
-            <input type="text" name="deskripsi">
+            <input type="text" name="deskripsi" placeholder="Deskripsi">
         </div>
         <div class="my-3 d-flex flex-column">
             <label for="Tanggal Pelaksanaan" class="my-3">Tanggal Pelaksanaan</label>

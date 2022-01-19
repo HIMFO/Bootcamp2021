@@ -34,19 +34,20 @@ active
         </div>
         {{-- Data --}}
         <div class="p-3 col-12 rounded-bottom">
+            @foreach ($event1 as $e)
             <div class="row ">
                 {{-- No --}}
                 <div class="col-1 text-center">1</div>
                 {{-- Event Name --}}
-                <div class="col-2">Welcoming Party HIMFO 2021</div>
+                <div class="col-2">{{$e->nama}}</div>
                 {{-- Description --}}
-                <div class="col-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consectetur nesciunt impedit aliquid numquam? Quis laborum consequuntur praesentium eius fugit!</div>
+                <div class="col-2">{{$e->deskripsi}}</div>
                 {{-- Image --}}
                 <div class="col-3">
-                    <img src="" alt="image">
+                    <img src="{{$e->image}}" alt="image" style="height: 150px;width: 180px;">
                 </div>
                 {{-- Tanggal Pelaksanaan --}}
-                <div class="col-2 text-center">15 Agustus 2021</div>
+                <div class="col-2 text-center">{{$e->date}}</div>
                 {{-- Action --}}
                 <div class="col-2 d-flex justify-content-around align-items-center">
                     <button type="button" class="btn btn-primary">
@@ -57,6 +58,7 @@ active
                     </button>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>

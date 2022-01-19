@@ -33,11 +33,12 @@ active
         </div>
         {{-- Data --}}
         <div class="p-3 col-12 rounded-bottom">
+            @foreach($galeri as $g)
             <div class="row ">
                 {{-- No --}}
                 <div class="col-1 text-center">1</div>
                 {{-- Event Name --}}
-                <div class="col-3">Welcoming Party HIMFO 2021</div>
+                <div class="col-3">{{$g->nama}}</div>
                 {{-- Image --}}
                 <div class="col-4">
                     <img src="" alt="image">
@@ -49,11 +50,15 @@ active
                     <button type="button" class="btn btn-primary">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
                     <button type="button" class="btn btn-danger">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>

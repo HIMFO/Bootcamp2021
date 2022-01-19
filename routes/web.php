@@ -23,17 +23,17 @@ Route::get('/', 'WebController@homepage');
 //    return view('register');
 //});
 
-Route::get('/aboutus', function () {
-    return view('admin.aboutus');
-});
+// Route::get('/aboutus', function () {
+//     return view('admin.aboutus');
+// });
 
-Route::get('/galleries', function () {
-    return view('admin.galleries');
-});
+// Route::get('/galleries', function () {
+//     return view('admin.galleries');
+// });
 
-Route::get('/event', function () {
-    return view('admin.event');
-});
+// Route::get('/event', function () {
+//     return view('admin.event');
+// });
 
 Route::get('/blog', function () {
     return view('admin.blog');
@@ -58,7 +58,7 @@ Route::get('/upload/updateevent', function () {
 Route::get('/upload/updategalleries', function () {
     return view('admin.upload.updategalleries');
 });
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -69,3 +69,23 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], fu
     
     Route::get('home', 'HomeController@home')->name('home');
 });
+
+// Route untuk upload event
+Route::POST('/uploadEvent','EventController@uploadEvent')->name('uploadEvent');
+
+//route untuk akses halaman event dan menampilkan data event
+Route::GET('/event','EventController@index');
+
+//Route untuk galeri dan gambar
+
+//tambah data galeri [tes]
+Route::GET('/tambahdatagaleri', 'GaleriController@tambahDataGaleri');
+
+//tambah gambar
+Route::GET('/tambahgambar', 'GaleriController@tambahGambar');
+
+//upload galeri dan gambar
+Route::POST('/uploadGaleri', 'GaleriController@uploadGaleri')->name('upload.galeri');
+
+//untuk menampilkan list galeri
+Route::GET('/galleries', 'GaleriController@index');

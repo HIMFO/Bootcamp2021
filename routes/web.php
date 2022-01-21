@@ -42,9 +42,10 @@ Route::get('/blog', function () {
 });
 
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/testimonials', 'TestimonialController');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
     Route::get('login', 'AuthController@showLoginForm')->name('login');
@@ -89,5 +90,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], fu
     Route::POST('/uploadGaleri', 'GaleriController@uploadGaleri')->name('upload.galeri');
 
     //untuk menampilkan list galeri
-    Route::GET('/galleries', 'GaleriController@index');
+    Route::GET('/galleries', 'GaleriController@index')->name('galleries');
 });

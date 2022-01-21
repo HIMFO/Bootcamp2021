@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="@yield('nav-galleries')">
-                    <a href="/galleries" class="ps-4">
+                    <a href="{{ route('admin.galleries') }}" class="ps-4">
                         <i class="fas fa-image me-2"></i>
                         Galleries
                     </a>
